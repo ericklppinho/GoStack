@@ -7,7 +7,10 @@ import Repository from '../pages/Repository';
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={Dashboard} />
-    <Route path="/repository" component={Repository} />
+    <Route path="/repository/:repository+" component={Repository} />
+    {/* O "+"" serve para indicar que é tudo apartir da variável.
+    Se o "+"" não for colocado, como há "/" no nome do repositório,
+    o que vier depois da "/" será uma extenção da rota ":repository". */}
   </Switch>
 );
 
